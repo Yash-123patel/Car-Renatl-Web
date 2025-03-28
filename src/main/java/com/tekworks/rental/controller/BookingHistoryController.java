@@ -126,6 +126,6 @@ public class BookingHistoryController {
 					.body(new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR, "Internal Server Error", Instant.now()));
 		}
 		
-
 	}
+	
 }
