@@ -13,5 +13,30 @@
     "name": "twilio.phone-number",
     "type": "java.lang.String",
     "description": "A description for 'twilio.phone-number'"
+  },
+  {
+    "name": "razorpay.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'razorpay.secret'"
+  },
+  {
+    "name": "twilio.account.sid",
+    "type": "java.lang.String",
+    "description": "A description for 'twilio.account.sid'"
+  },
+  {
+    "name": "razorpay.key",
+    "type": "java.lang.String",
+    "description": "A description for 'razorpay.key'"
+  },
+  {
+    "name": "twilio.auth.token",
+    "type": "java.lang.String",
+    "description": "A description for 'twilio.auth.token'"
+  },
+  {
+    "name": "twilio.phone.number",
+    "type": "java.lang.String",
+    "description": "A description for 'twilio.phone.number'"
   }
 ]}
