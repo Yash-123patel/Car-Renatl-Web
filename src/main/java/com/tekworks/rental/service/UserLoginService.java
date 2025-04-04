@@ -88,12 +88,13 @@ public class UserLoginService {
 	// method for register the users
 	
 	@Transactional(rollbackForClassName  = "java.lang.Exception")
-	public void register(UserDto userDto) {
+	public Users register(UserDto userDto) {
 		Users user = convertToEntity(userDto);
 		String encode = encoder.encode(user.getPassword());
 		user.setPassword(encode);
 		user.setCreatedAt(Instant.now());
-		usersRepository.save(user);
+		Users savedUser = usersRepository.save(user);
+		return savedUser;
 	}
 
 	// method for sending otp in mobile number

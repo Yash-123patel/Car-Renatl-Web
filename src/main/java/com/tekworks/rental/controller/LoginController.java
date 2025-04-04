@@ -19,6 +19,7 @@ import com.tekworks.rental.dto.SendOtpDto;
 import com.tekworks.rental.dto.UserDto;
 import com.tekworks.rental.dto.UserProfilUpdateDto;
 import com.tekworks.rental.dto.VerifyOtpDto;
+import com.tekworks.rental.entity.Users;
 import com.tekworks.rental.repository.UsersRepository;
 import com.tekworks.rental.response.ErrorResponse;
 import com.tekworks.rental.response.SuccessResponse;
@@ -50,8 +51,12 @@ public class LoginController {
 			                .body(new ErrorResponse(HttpStatus.BAD_REQUEST, "Phone Number Already Registered", Instant.now()));
 			    }
 
-			    userLoginService.register(userDto);
-			    return ResponseEntity.status(HttpStatus.OK)
+			    Users user = userLoginService.register(userDto);
+			   if(user==null) {
+				 throw new Exception("User Can not registerd due to some error");
+			   }
+			   
+			   return ResponseEntity.status(HttpStatus.OK)
 			            .body( "Registered Successfully");
 		}
 		catch (Exception e) {
